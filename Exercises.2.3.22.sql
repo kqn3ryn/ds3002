@@ -58,7 +58,7 @@ SELECT distinct product_name, unit_price
 FROM products
 JOIN order_details
 ON order_details.product_id = products.id
-ORDER BY unit_price
+ORDER BY unit_price DESC
 LIMIT 10;
 
 /* 9. Get count of current and discontinued products */
