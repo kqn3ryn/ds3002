@@ -67,9 +67,9 @@ FROM products
 GROUP BY discontinued;
 
 /* 10. Get product list (name, units on order, units in stock) of stock that is less than the quantity on order */
-SELECT products.product_name, order_details.orderQuantity, inventory_transactions.quantity 
+SELECT products.product_name, order_details.quantity, inventory_transactions.quantity 
 FROM products 
 JOIN order_details 
 JOIN inventory_transactions 
 ON products.id=order_details.product_id AND order_details.product_id=inventory_transactions.product_id 
-WHERE inventory_transactions.quantity < order_details.orderQuantity;
+WHERE inventory_transactions.quantity < order_details.quantity;
